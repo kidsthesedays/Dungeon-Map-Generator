@@ -271,8 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0}
-  iterations: 1
-  walkLength: 10
+  iterations: 20
+  walkLength: 20
   startRanIteration: 1
   tilemapVisualizer: {fileID: 1694733624}
 --- !u!4 &383848891
@@ -342,7 +342,7 @@ Camera:
   far clip plane: 1000
   field of view: 7.8496547
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -366,7 +366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -510,7 +510,7 @@ RectTransform:
   m_GameObject: {fileID: 1353648177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7237987, y: 0.7237987, z: 0.7237987}
+  m_LocalScale: {x: 1.0951798, y: 1.0951798, z: 1.0951798}
   m_Children:
   - {fileID: 1507000823}
   m_Father: {fileID: 1862986538}
@@ -518,7 +518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 390.8, y: 210.4}
+  m_AnchoredPosition: {x: 825, y: 468}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1353648179

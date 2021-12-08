@@ -22,6 +22,7 @@ public class SimpleRandomWalkDungeonGenerator : MonoBehaviour
     public void runProceduralGeneration()
     {
         HashSet<Vector2Int> floorPos = runRandomWalk();
+        tilemapVisualizer.Clear();
         tilemapVisualizer.paintFloorTiles(floorPos);
     }
 
