@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class SimpleRandomWalkDungeonGenerator : MonoBehaviour
+public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
 {
-    [SerializeField]
-    protected Vector2Int startPos = Vector2Int.zero;
     
     [SerializeField]
     private int iterations = 10;
@@ -15,11 +13,10 @@ public class SimpleRandomWalkDungeonGenerator : MonoBehaviour
     [SerializeField]
     public bool startRanIteration = true;
 
-    [SerializeField]
-    private TilemapVisualizer tilemapVisualizer;
-
     
-    public void runProceduralGeneration()
+
+
+    protected override void runProceduralGeneration()
     {
         HashSet<Vector2Int> floorPos = runRandomWalk();
         tilemapVisualizer.Clear();
