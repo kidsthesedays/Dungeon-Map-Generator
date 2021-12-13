@@ -7,7 +7,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
 {
     
     [SerializeField]
-    private SimpleRandomWalkData randomWalkParameters;
+    protected SimpleRandomWalkData randomWalkParameters;
     
 
     
@@ -15,21 +15,21 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
 
     protected override void runProceduralGeneration()
     {
-        HashSet<Vector2Int> floorPos = runRandomWalk();
+        HashSet<Vector2Int> floorPos = runRandomWalk(randomWalkParameters, startPos);
         tilemapVisualizer.Clear();
         tilemapVisualizer.paintFloorTiles(floorPos);
         WallGenerator.CreateWalls(floorPos,tilemapVisualizer);
     }
 
-    protected HashSet<Vector2Int> runRandomWalk()
+    protected HashSet<Vector2Int> runRandomWalk(SimpleRandomWalkData parameters, Vector2Int position)
     {
-        var currentPos = startPos;
+        var currentPos = position;
         HashSet<Vector2Int> floorPos = new HashSet<Vector2Int>();
-        for (int i = 0; i < randomWalkParameters.iterations; i++)
+        for (int i = 0; i < parameters.iterations; i++)
         {
-            var path = ProceduralGenerationAlgorithms.SimpleRandomWalk(currentPos, randomWalkParameters.walkLength);
+            var path = ProceduralGenerationAlgorithms.SimpleRandomWalk(currentPos, parameters.walkLength);
             floorPos.UnionWith(path);
-            if (randomWalkParameters.startRandomlyEachIteration)
+            if (parameters.startRandomlyEachIteration)
             {
                 currentPos = floorPos.ElementAt(Random.Range(0, floorPos.Count));
             }
