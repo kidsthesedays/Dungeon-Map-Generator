@@ -26,10 +26,47 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
         CreateCorridors(floorPositions, potentialRoomPos);
         
         HashSet<Vector2Int> roomPositions = CreateRooms(potentialRoomPos);
+
+        List<Vector2Int> deadEnds = findDeadEnds(floorPositions);
+        CreateRoomsAtDeadEnds(deadEnds, roomPositions);
+        
         floorPositions.UnionWith(roomPositions);
         tilemapVisualizer.paintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);
 
+    }
+
+    private void CreateRoomsAtDeadEnds(List<Vector2Int> deadEnds, HashSet<Vector2Int> roomFloors)
+    {
+        foreach (var position in deadEnds)
+        {
+            if (roomFloors.Contains(position)==false) //if no room is at the position it is a dead end.
+            {
+                var room = runRandomWalk(randomWalkParameters, position);
+                roomFloors.UnionWith(room);
+            }
+        }
+    }
+
+    private List<Vector2Int> findDeadEnds(HashSet<Vector2Int> floorPositions)  
+    {
+        List<Vector2Int> deadEnds = new List<Vector2Int>();
+        foreach (var position in floorPositions) //if neighbour is equal to 0 from the tile position it means it stops there. 
+        {
+            int neighboursCount = 0;
+            foreach (var direction in Dir2D.cardinalDirList) //loop through all directions from position
+            {
+                if (floorPositions.Contains(position + direction))//if a direction from the position is found. 
+                {
+                    neighboursCount++; //add it the list of neighbours
+                    
+                }
+            }
+            if (neighboursCount==1) // if there are only one neighbour it is a dead end. if there are more it is not.  
+                deadEnds.Add(position);
+        }
+
+        return deadEnds;
     }
 
     private HashSet<Vector2Int> CreateRooms(HashSet<Vector2Int> potentialRoomPos)
