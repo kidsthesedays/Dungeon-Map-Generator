@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f9708de2-c43c-4a45-88d9-fe392d666104" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ProceduralGenerationAlgorithms.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ProceduralGenerationAlgorithms.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/RoomFirstDungeonGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/RoomFirstDungeonGenerator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +92,8 @@
       <workItem from="1639143421688" duration="2475000" />
       <workItem from="1639146259734" duration="912000" />
       <workItem from="1639662954954" duration="3344000" />
-      <workItem from="1639669064192" duration="5089000" />
+      <workItem from="1639669064192" duration="5139000" />
+      <workItem from="1639692077679" duration="2587000" />
     </task>
     <servers />
   </component>
