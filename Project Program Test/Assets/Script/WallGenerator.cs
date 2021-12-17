@@ -9,7 +9,7 @@ public static class WallGenerator
         var basicWallPos = FindWallsInDir(floorPos, Dir2D.cardinalDirList);
         foreach (var position in basicWallPos)
         {
-            tilemapVisualizer.PaintSingleBasicWall(position);
+            //tilemapVisualizer.PaintSingleBasicWall(position);
         }
     }
 
