@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f9708de2-c43c-4a45-88d9-fe392d666104" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/RandomDungeonGeneratorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/RandomDungeonGeneratorEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/AbstractDungeonGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/AbstractDungeonGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Data/SimpleRandomWalkData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Data/SimpleRandomWalkData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ProceduralGenerationAlgorithms.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ProceduralGenerationAlgorithms.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/SimpleRandomWalkDungeonGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/SimpleRandomWalkDungeonGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/TilemapVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/TilemapVisualizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/CorridorFirstDungeonGeneration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/CorridorFirstDungeonGeneration.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +25,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Editor/RandomDungeonGeneratorEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/RoomFirstDungeonGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Data/SimpleRandomWalkData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -111,6 +105,7 @@
       <workItem from="1639749678320" duration="1836000" />
       <workItem from="1639836987701" duration="2472000" />
       <workItem from="1639840839449" duration="5796000" />
+      <workItem from="1639846741173" duration="1378000" />
     </task>
     <servers />
   </component>
