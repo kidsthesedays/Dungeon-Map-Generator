@@ -7,24 +7,25 @@ using System;
 public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
 {
     [SerializeField]
-    private int corridorLenghth = 14, corridorCount = 5;
+    private int corridorLenghth = 14, corridorCount = 5; //Determining the Lenght of each corridor and the total amount of corridors
     [SerializeField]
-    [Range(0.1f,1)]
-    private float roomPercent = 0.8f;
+    [Range(0.1f,1)] //The range of which the percent can be scalled
+    private float roomPercent = 0.8f; //percent rooms made used in the "CreateRooms" method for the calculations
 
 
 
-    protected override void runProceduralGeneration()
+    protected override void runProceduralGeneration() //overides the previouse method
     {
         CorridorFirstGeneration();
     }
 
     private void CorridorFirstGeneration()
     {
-        HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
-        HashSet<Vector2Int> potentialRoomPos = new HashSet<Vector2Int>();
-        CreateCorridors(floorPositions, potentialRoomPos);
+        HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>(); //creates a new floor position
+        HashSet<Vector2Int> potentialRoomPos = new HashSet<Vector2Int>(); //creates a new potential room position
+        CreateCorridors(floorPositions, potentialRoomPos); 
         
+<<<<<<< Updated upstream
         HashSet<Vector2Int> roomPositions = CreateRooms(potentialRoomPos);
 
         List<Vector2Int> deadEnds = findDeadEnds(floorPositions);
@@ -70,12 +71,22 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
     }
 
     private HashSet<Vector2Int> CreateRooms(HashSet<Vector2Int> potentialRoomPos)
-    {
-        HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>();
-        int roomToCreateCount = Mathf.RoundToInt(potentialRoomPos.Count * roomPercent);
-        List<Vector2Int> roomToCreate = potentialRoomPos.OrderBy(x => Guid.NewGuid()).Take(roomToCreateCount).ToList();
+=======
+        HashSet<Vector2Int> roomPositions = CreateRooms(potentialRoomPos); //uses the potential position as an argument in the constructer for the room placement
+        floorPositions.UnionWith(roomPositions); //unions the floor position hashset with the room position hashset
+        tilemapVisualizer.paintFloorTiles(floorPositions); //uses parameters to place tiles
+        WallGenerator.CreateWalls(floorPositions, tilemapVisualizer); //uses parameters to place walls
 
-        foreach (var roomPos in roomToCreate)
+    }
+
+    private HashSet<Vector2Int> CreateRooms(HashSet<Vector2Int> potentialRoomPos) 
+>>>>>>> Stashed changes
+    {
+        HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>(); //creates a new room position determening the room position on the corridor
+        int roomToCreateCount = Mathf.RoundToInt(potentialRoomPos.Count * roomPercent); //Determins how many tiles it takes before a room is placed
+        List<Vector2Int> roomToCreate = potentialRoomPos.OrderBy(x => Guid.NewGuid()).Take(roomToCreateCount).ToList(); //????
+
+        foreach (var roomPos in roomToCreate) //uses randomWalk to place rooms
         {
             var roomFloor = runRandomWalk(randomWalkParameters, roomPos);
             roomPositions.UnionWith(roomFloor);
@@ -85,9 +96,9 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
     
     private void CreateCorridors(HashSet<Vector2Int> floorPositions, HashSet<Vector2Int> potentialRoomPos)
     {
-        var currentPosition = startPos;
+        var currentPosition = startPos; 
         potentialRoomPos.Add(currentPosition);
-        for (int i = 0; i < corridorCount; i++)
+        for (int i = 0; i < corridorCount; i++) //places the corridor tiles
         {
             var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, corridorLenghth);
             currentPosition = corridor[corridor.Count - 1];
