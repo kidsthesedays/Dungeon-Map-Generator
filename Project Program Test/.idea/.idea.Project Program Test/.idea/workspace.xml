@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f9708de2-c43c-4a45-88d9-fe392d666104" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/RandomDungeonGeneratorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/RandomDungeonGeneratorEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/AbstractDungeonGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/AbstractDungeonGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Data/SimpleRandomWalkData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Data/SimpleRandomWalkData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ProceduralGenerationAlgorithms.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ProceduralGenerationAlgorithms.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/SimpleRandomWalkDungeonGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/SimpleRandomWalkDungeonGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/TilemapVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/TilemapVisualizer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/WallGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/WallGenerator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +30,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Editor/RandomDungeonGeneratorEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/RoomFirstDungeonGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Data/SimpleRandomWalkData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,6 +56,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Run/Project Program Test.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\Rasmus\5semester\Project\Dungeon-Map-Generator\Project Program Test\Run" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -96,7 +108,9 @@
       <workItem from="1639662954954" duration="3344000" />
       <workItem from="1639669064192" duration="5139000" />
       <workItem from="1639692077679" duration="3004000" />
-      <workItem from="1639749678320" duration="1677000" />
+      <workItem from="1639749678320" duration="1836000" />
+      <workItem from="1639836987701" duration="2472000" />
+      <workItem from="1639840839449" duration="5796000" />
     </task>
     <servers />
   </component>

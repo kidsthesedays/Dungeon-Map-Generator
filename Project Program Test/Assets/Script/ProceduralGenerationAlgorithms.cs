@@ -5,18 +5,19 @@ using UnityEngine;
 public static class ProceduralGenerationAlgorithms 
 {
 
-    public static HashSet<Vector2Int> SimpleRandomWalk(Vector2Int startPos, int walkLength)
+    public static HashSet<Vector2Int> SimpleRandomWalk(Vector2Int startPos, int walkLength) // Creates a path the first position, in a direction
+    //and stops when the length has been reached.
     {
-        HashSet<Vector2Int> path = new HashSet<Vector2Int>();
+        HashSet<Vector2Int> path = new HashSet<Vector2Int>(); //Collection that stores unique values.
 
         path.Add(startPos);
         var prevPos = startPos;
 
-        for (int i = 0; i < walkLength; i++)
+        for (int i = 0; i < walkLength; i++) //iterate through the walk length index. Then Add a direction. The end point is the new position.
         {
             var newPos = prevPos + Dir2D.getRanCardinalDir();
             path.Add(newPos);
-            prevPos = newPos;
+            prevPos = newPos; //the new position becomes the previouis position to keep the loop going from there. 
         }
 
         return path;
@@ -37,32 +38,37 @@ public static class ProceduralGenerationAlgorithms
         return corridor;
     }
 
-    public static List<BoundsInt> BinarySpacePartitioning(BoundsInt spaceToSplit, int minWidth, int minHeight) //BSP Video
+    public static List<BoundsInt> BinarySpacePartitioning(BoundsInt spaceToSplit, int minWidth, int minHeight) //Bounds is bounding to axis of specific values
+                                                                                                               // also called AABB for axis-aligned bounding box.
     {
-        Queue<BoundsInt> roomsQueue = new Queue<BoundsInt>();
-        List<BoundsInt> roomsList = new List<BoundsInt>();
-        roomsQueue.Enqueue(spaceToSplit); // first in first out.
-        while (roomsQueue.Count > 0)
+        Queue<BoundsInt> roomsQueue = new Queue<BoundsInt>(); //Queue rooms that is available for split
+        List<BoundsInt> roomsList = new List<BoundsInt>();// take room to split.
+        roomsQueue.Enqueue(spaceToSplit); // first in first out. A data structure that automatically add and removes in the queue
+                                          // if the conditions for split is correct
+        while (roomsQueue.Count > 0)//This allows the algorithm to split till there is no more space.
         {
-            var room = roomsQueue.Dequeue();
-            if (room.size.y >= minHeight && room.size.x >= minWidth)
+            var room = roomsQueue.Dequeue(); //Take a room out to split it.
+            if (room.size.y >= minHeight && room.size.x >= minWidth) //Check if the room meets the minimum size condition.
+                                                                     //This Space can contain a room or be split into multiple rooms
             {
-                if (Random.value < 0.5f)
+                if (Random.value < 0.5f) //Choose a random way to split the value. it is based on 0 or 1. so if it is less than 0.5.
+                                         //it goes and tries to split horizontally first.
+                                         
                 {
-                    if (room.size.y >= minHeight * 2)
+                    if (room.size.y >= minHeight * 2) //checks if the room can be split horizontally.
                     {
                         splitHorizontally(minWidth, roomsQueue, room);
-                    }else if (room.size.x >= minWidth * 2)
+                    }else if (room.size.x >= minWidth * 2) // checks if the room can be split vertically.
                     {
                         splitVertically(minHeight, roomsQueue, room);
-                    }else 
+                    }else //if it cant be split it is added to the rooms list as a final room
                     {
-                        roomsList.Add(room);
+                        roomsList.Add(room);//also it doesn't get considered to split in the queue.
                     }
                 }
-                else
+                else //split vertically first.
                 {
-                    if (room.size.x >= minWidth * 2)
+                    if (room.size.x >= minWidth * 2) 
                     {
                         splitVertically(minHeight, roomsQueue, room);
                     }
@@ -79,7 +85,7 @@ public static class ProceduralGenerationAlgorithms
                 
         }
 
-        return roomsList;
+        return roomsList; 
     }
 
     private static void splitVertically(int minHeight, Queue<BoundsInt> roomsQueue, BoundsInt room)
@@ -106,17 +112,18 @@ public static class ProceduralGenerationAlgorithms
 }
 
 
-public static class Dir2D
+public static class Dir2D 
 {
     public static List<Vector2Int> cardinalDirList = new List<Vector2Int>
     {
+        //Directions
         new Vector2Int(0, 1), //up
         new Vector2Int(1, 0), //RIGHT
         new Vector2Int(0, -1), //DOWN  
         new Vector2Int(-1, 0) //LEFT
     };
 
-    public static Vector2Int getRanCardinalDir()
+    public static Vector2Int getRanCardinalDir() //get a random direction.
     {
         return cardinalDirList[Random.Range(0, cardinalDirList.Count)];
     }

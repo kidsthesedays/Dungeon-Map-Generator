@@ -11,15 +11,16 @@ public class RandomDungeonGeneratorEditor : Editor
 
     private void Awake()
     {
-        generator = (AbstractDungeonGenerator) target;
+        generator = (AbstractDungeonGenerator) target; //Makes reference to the abstract class. 
     }
 
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        if (GUILayout.Button("Create Dungeon"))
+        if (GUILayout.Button("Create Dungeon")) //Creates button in the inspector.
         {
-            generator.GenerateDungeon();
+            generator.GenerateDungeon(); //Makes Generation if the button is clicked. Turns Generator true. 
         }
     }
+    
 }
