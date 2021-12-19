@@ -88,20 +88,22 @@ public static class ProceduralGenerationAlgorithms
         return roomsList; 
     }
 
-    private static void splitVertically(int minHeight, Queue<BoundsInt> roomsQueue, BoundsInt room)
+    private static void splitVertically(int minHeight, Queue<BoundsInt> roomsQueue, BoundsInt room) 
     {
-        var xSplit = Random.Range(1, room.size.x);
-        BoundsInt room1 = new BoundsInt(room.min, new Vector3Int(xSplit, room.size.y, room.size.z));
+        var xSplit = Random.Range(1, room.size.x); //Chooses a new starting position randomly.
+        BoundsInt room1 = new BoundsInt(room.min, new Vector3Int(xSplit, room.size.y, room.size.z)); //Defines the first room and uses xSplit as the max Width.
+                                                                                                     
         BoundsInt room2 = new BoundsInt(new Vector3Int(room.min.x + xSplit, room.min.y, room.min.z),
-            new Vector3Int(room.size.x - xSplit, room.size.y, room.size.z));
+            new Vector3Int(room.size.x - xSplit, room.size.y, room.size.z));//the starting position is the width of the room subtracted
+                                                                            //with the width of the first room. Creating two rooms for the queue. Split Vertically.
         roomsQueue.Enqueue(room1);
         roomsQueue.Enqueue(room2);
 
     }
 
-    private static void splitHorizontally(int minWidth, Queue<BoundsInt> roomsQueue, BoundsInt room)
+    private static void splitHorizontally(int minWidth, Queue<BoundsInt> roomsQueue, BoundsInt room)//the same as the vertical split just turned.
     {
-        var ySplit = Random.Range(1, room.size.y); //(minHeight, room.size.y - minHeight)
+        var ySplit = Random.Range(1, room.size.y); //(minHeight, room.size.y - minHeight) can also be used but its not random. will always split in the middle.
         BoundsInt room1 = new BoundsInt(room.min, new Vector3Int(room.size.x, ySplit, room.size.z));
         BoundsInt room2 = new BoundsInt(new Vector3Int(room.min.x, room.min.y + ySplit, room.min.z),
             new Vector3Int(room.size.x, room.size.y - ySplit, room.size.y));
