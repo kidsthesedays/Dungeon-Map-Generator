@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator //inherites from the abstract class.
 {
@@ -19,6 +21,27 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator //inher
         tilemapVisualizer.Clear();
         tilemapVisualizer.paintFloorTiles(floorPos);
         WallGenerator.CreateWalls(floorPos,tilemapVisualizer);
+        //attempting to index the hashset.
+        List<Vector2Int> iFloor = new List<Vector2Int>();
+        foreach (var position in floorPos)
+        { //shows position of all tiles as they are placed. good to follow the behavior of the code
+            Debug.Log(position);
+            iFloor.Add(position);
+        }
+
+        for (int i = 0; i < floorPos.Count; i++)
+        {
+            print(iFloor);
+        }
+        
+        
+        
+        
+
+        
+
+
+
     }
 
     protected HashSet<Vector2Int> runRandomWalk(SimpleRandomWalkData parameters, Vector2Int position) //Takes in parameters that are universal to run the Algorithm.
