@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f9708de2-c43c-4a45-88d9-fe392d666104" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rasmus.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rasmus.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/RandomDungeonGeneratorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/RandomDungeonGeneratorEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/AbstractDungeonGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/AbstractDungeonGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/RoomFirstDungeonGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/RoomFirstDungeonGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/SimpleRandomWalkDungeonGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/SimpleRandomWalkDungeonGenerator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,7 @@
       <workItem from="1639846741173" duration="1493000" />
       <workItem from="1639916710014" duration="6220000" />
       <workItem from="1640098737049" duration="5357000" />
-      <workItem from="1640600885334" duration="3038000" />
+      <workItem from="1640600885334" duration="3962000" />
     </task>
     <servers />
   </component>
