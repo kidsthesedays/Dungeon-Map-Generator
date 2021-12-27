@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9708de2-c43c-4a45-88d9-fe392d666104" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rasmus.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rasmus.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/SimpleRandomWalkDungeonGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/SimpleRandomWalkDungeonGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Niklas.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +51,7 @@
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="rider.run.widget.enabled.cache" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.build.unityPlugin" />
+    <property name="settings.editor.selected.configurable" value="preferences.environmentSetup" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -110,6 +113,7 @@
       <workItem from="1639846741173" duration="1493000" />
       <workItem from="1639916710014" duration="6220000" />
       <workItem from="1640098737049" duration="5357000" />
+      <workItem from="1640543802594" duration="11207000" />
     </task>
     <servers />
   </component>
@@ -129,6 +133,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
