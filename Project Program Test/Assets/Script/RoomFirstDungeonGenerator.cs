@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inherites to use randomwalk on rooms. 
 {
+    [SerializeField]
+    private int corridorLenghth = 14, mineCount = 5;
     [SerializeField] //Base Parameters for generation. 
     private int minRoomWidth = 4, minRoomHeight = 4; 
     [SerializeField]
@@ -13,17 +15,21 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
     private int offset = 1; //offset based from the bounds of each room. how far should the rooms be away from each other as a minimum.
     [SerializeField]
     private bool randomWalkRooms = false; // use or not use the algorithm. 
-
+    public GameObject blop;
+   
 
     protected override void runProceduralGeneration()
     {
         CreateRooms();
+        GenerateMine();
     }
 
     private void CreateRooms()
     {
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int) startPos,
             new Vector3Int(dungeonWidth, dungeonHeight, 0)),minRoomWidth,minRoomHeight); //Create rooms with the parameters given.
+       
+        
 
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>(); 
 
@@ -160,4 +166,44 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         }
         return floor;
     }
+      private void GenerateMine()
+    {
+        HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
+        HashSet<Vector2Int> potentialRoomPos = new HashSet<Vector2Int>(); 
+        CreateMine(floorPositions, potentialRoomPos);  
+
+        tilemapVisualizer.paintFloorTiles(floorPositions); 
+    }
+  
+    private void CreateMine(HashSet<Vector2Int> floorPositions, HashSet<Vector2Int> potentialRoomPos)
+    
+    {
+        
+        Vector2Int currentPosition = new Vector2Int (Random.Range(0,dungeonWidth-1), Random.Range(0, dungeonHeight-1));
+        potentialRoomPos.Add(currentPosition);
+        for (int i = 0; i < mineCount; i++) 
+        {
+            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, mineCount);
+            currentPosition = corridor[corridor.Count - 1];
+            potentialRoomPos.Add(currentPosition);
+            floorPositions.UnionWith(corridor);
+        }
+    
+
+        
+        
+        //Instantiate(blop, new (dungeonWidth-1, Random.Range(0, dungeonHeight-1), 0),  Quaternion.identity);
+        //ProceduralGenerationAlgorithms.RandomWalkCorridor();
+        
+        
+        //List<Vector3Int> mineTiles = new List<Vector3Int>();
+        
+
+
+    }
+     
+    
+
+  
+
 }
