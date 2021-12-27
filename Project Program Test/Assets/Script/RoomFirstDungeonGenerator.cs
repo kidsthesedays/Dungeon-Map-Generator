@@ -189,6 +189,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
             floorPositions.UnionWith(corridor);
         }
 
+        
+
 
 
 
@@ -200,6 +202,16 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
 
 
 
+    }
+
+    private static HashSet<Vector2Int> FindEdgePositions(int dungeonWidth, int dungeonHeight)
+    {
+       // var startEdge = startPos;
+        HashSet<Vector2Int> EdgePositions = new HashSet<Vector2Int>();
+        
+        
+
+        return null;
     }
 
 
