@@ -22,8 +22,8 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator //inher
         tilemapVisualizer.paintFloorTiles(floorPos);
         WallGenerator.CreateWalls(floorPos,tilemapVisualizer);
         //attempting to index the hashset.
-        List<Vector2Int> iFloor = new List<Vector2Int>();
-        foreach (var position in floorPos)
+        //List<Vector2Int> iFloor = new List<Vector2Int>();
+        /*foreach (var position in floorPos)
         { //shows position of all tiles as they are placed. good to follow the behavior of the code
             iFloor.Add(position);
         }
@@ -32,7 +32,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator //inher
         {
             Debug.Log("Position: "+iFloor[i]+" Index: "+i);
             
-        }
+        }*/
         
 
     }

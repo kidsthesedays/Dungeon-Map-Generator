@@ -4501,7 +4501,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 185866262}
         m_TargetAssemblyTypeName: AbstractDungeonGenerator, Assembly-CSharp
         m_MethodName: GenerateDungeon
         m_Mode: 1
@@ -4634,7 +4634,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 568497557}
         m_TargetAssemblyTypeName: AbstractDungeonGenerator, Assembly-CSharp
         m_MethodName: GenerateDungeon
         m_Mode: 1
@@ -12618,7 +12618,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 383848890}
         m_TargetAssemblyTypeName: AbstractDungeonGenerator, Assembly-CSharp
         m_MethodName: GenerateDungeon
         m_Mode: 1
