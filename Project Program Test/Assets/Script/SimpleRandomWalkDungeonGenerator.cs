@@ -25,22 +25,15 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator //inher
         List<Vector2Int> iFloor = new List<Vector2Int>();
         foreach (var position in floorPos)
         { //shows position of all tiles as they are placed. good to follow the behavior of the code
-            Debug.Log(position);
             iFloor.Add(position);
         }
 
-        for (int i = 0; i < floorPos.Count; i++)
+        for (int i = 0; i < iFloor.Count; i++)
         {
-            print(iFloor);
+            Debug.Log("Position: "+iFloor[i]+" Index: "+i);
+            
         }
         
-        
-        
-        
-
-        
-
-
 
     }
 
