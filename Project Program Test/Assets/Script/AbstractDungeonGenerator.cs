@@ -16,6 +16,8 @@ public abstract class AbstractDungeonGenerator : MonoBehaviour //We make abstrac
         runProceduralGeneration();
     }
 
+    
+
     protected abstract void runProceduralGeneration(); //Makes generation possible based on which is picked to generate.
                                                        //Every Generation algorithm/method can be generated
 }
