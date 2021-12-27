@@ -17,9 +17,16 @@ public class TilemapVisualizer : MonoBehaviour
 
     private void PaintTiles(IEnumerable<Vector2Int> positions, Tilemap tilemap, TileBase tile) //Take in Tiles and its properties.
     {
+        List<Vector2Int> iTile = new List<Vector2Int>();
         foreach (var position in positions)
         {
-            paintSingleTile(tilemap,tile,position); //Assign the selected tile texture to the tilemap from given position and map. 
+            paintSingleTile(tilemap,tile,position); //Assign the selected tile texture to the tilemap from given position and map.
+            iTile.Add(position);
+        }
+
+        for (int i = 0; i < iTile.Count; i++)
+        {
+            Debug.Log("Position: " + iTile[i] + " Index: " + i);
         }
     }
 
