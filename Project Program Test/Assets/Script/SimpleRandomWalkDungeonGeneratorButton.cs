@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ButtonFunction3 : SimpleRandomWalkDungeonGenerator {
+public class SimpleRandomWalkDungeonGeneratorButton : SimpleRandomWalkDungeonGenerator {
     public Button yourButton;
 
     void Start () {

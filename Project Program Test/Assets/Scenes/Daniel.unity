@@ -4314,12 +4314,15 @@ MonoBehaviour:
   tilemapVisualizer: {fileID: 1694733624}
   startPos: {x: 0, y: 0}
   randomWalkParameters: {fileID: 11400000, guid: e00223ebbe1fd8b4ea92d78e60461379, type: 2}
+  corridorLenghth: 14
+  mineCount: 5
   minRoomWidth: 5
   minRoomHeight: 5
   dungeonWidth: 30
   dungeonHeight: 30
   offset: 1
   randomWalkRooms: 0
+  blop: {fileID: 0}
 --- !u!1 &609641988
 GameObject:
   m_ObjectHideFlags: 0
@@ -12813,6 +12816,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1804285275}
+  - component: {fileID: 1804285274}
+  - component: {fileID: 1804285277}
+  - component: {fileID: 1804285276}
   m_Layer: 0
   m_Name: ButtonFunctions
   m_TagString: Untagged
@@ -12820,6 +12826,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1804285274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804285273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe5c8ee9ce324181b33969818b532ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapVisualizer: {fileID: 1694733624}
+  startPos: {x: 0, y: 0}
+  randomWalkParameters: {fileID: 0}
+  corridorLenghth: 14
+  corridorCount: 5
+  roomPercent: 0.8
+  yourButton: {fileID: 635350158}
 --- !u!4 &1804285275
 Transform:
   m_ObjectHideFlags: 0
@@ -12834,6 +12859,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1804285276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804285273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b22fd888b29a4972a685d8f70e2040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapVisualizer: {fileID: 1694733624}
+  startPos: {x: 0, y: 0}
+  randomWalkParameters: {fileID: 0}
+  yourButton: {fileID: 1305299344}
+--- !u!114 &1804285277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804285273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2a4e08f9b2493ba033ae6b94fd4c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapVisualizer: {fileID: 1694733624}
+  startPos: {x: 0, y: 0}
+  randomWalkParameters: {fileID: 0}
+  corridorLenghth: 14
+  mineCount: 5
+  minRoomWidth: 4
+  minRoomHeight: 4
+  dungeonWidth: 20
+  dungeonHeight: 20
+  offset: 1
+  randomWalkRooms: 0
+  blop: {fileID: 0}
+  yourButton: {fileID: 732170191}
 --- !u!1 &1889957917
 GameObject:
   m_ObjectHideFlags: 0

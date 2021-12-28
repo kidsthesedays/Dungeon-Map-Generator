@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ButtonFunction2 : CorridorFirstDungeonGeneration {
+public class CorridorFirstGeneratorButton : CorridorFirstDungeonGeneration {
     public Button yourButton;
 
     void Start () {
