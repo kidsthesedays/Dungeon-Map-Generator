@@ -127,6 +127,7 @@ public static class Dir2D
 
     public static Vector2Int getRanCardinalDir() //get a random direction.
     {
+        
         return cardinalDirList[Random.Range(0, cardinalDirList.Count)];
     }
 }

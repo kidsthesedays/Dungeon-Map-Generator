@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ButtonFunctions : RoomFirstDungeonGenerator {
-    public Button yourButton;
+public class SimpleRandomWalkDungeonGeneratorButton : SimpleRandomWalkDungeonGenerator {
+    public Button yourButton3;
 
     void Start () {
-        Button btn = yourButton.GetComponent<Button>();
+        Button btn = yourButton3.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
 
