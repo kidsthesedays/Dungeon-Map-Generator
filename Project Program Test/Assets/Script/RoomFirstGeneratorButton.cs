@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ButtonFunctions : RoomFirstDungeonGenerator {
+public class ButtonFunction : RoomFirstDungeonGenerator {
     public Button yourButton;
 
     void Start () {
