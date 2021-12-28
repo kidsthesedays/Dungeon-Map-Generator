@@ -97,4 +97,6 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
         }
     }
 
+    
+
 }

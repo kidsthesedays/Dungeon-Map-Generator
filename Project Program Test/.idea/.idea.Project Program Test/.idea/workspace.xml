@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9708de2-c43c-4a45-88d9-fe392d666104" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Program Test/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Niklas.unity.meta" beforeDir="false" />
@@ -11,6 +11,9 @@
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
 =======
+>>>>>>> Stashed changes
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ExitGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ExitGame.cs" afterDir="false" />
 >>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +34,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
     <setting file="file://$PROJECT_DIR$/Assets/Script/AbstractDungeonGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Data/SimpleRandomWalkData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -38,7 +42,13 @@
     <setting file="file://$PROJECT_DIR$/Assets/Script/SimpleRandomWalkDungeonGenerator.cs" root0="FORCE_HIGHLIGHTING" />
 >>>>>>> Stashed changes
     <setting file="file://$PROJECT_DIR$/Assets/Script/RoomFirstDungeonGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+=======
+    <setting file="mock:///Users/niklashundrup/Documents/GitHub/Dungeon-Map-Generator/Project Program Test/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+>>>>>>> Stashed changes
     <setting file="file://$PROJECT_DIR$/Assets/Script/Data/SimpleRandomWalkData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/niklashundrup/Documents/GitHub/Dungeon-Map-Generator/Project Program Test/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/RoomFirstDungeonGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/niklashundrup/Documents/GitHub/Dungeon-Map-Generator/Project Program Test/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/RandomDungeonGeneratorEditor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
