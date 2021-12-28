@@ -3,10 +3,10 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class CorridorFirstGeneratorButton : CorridorFirstDungeonGeneration {
-    public Button yourButton;
+    public Button yourButton2;
 
     void Start () {
-        Button btn = yourButton.GetComponent<Button>();
+        Button btn = yourButton2.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
 

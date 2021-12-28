@@ -3,10 +3,10 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class SimpleRandomWalkDungeonGeneratorButton : SimpleRandomWalkDungeonGenerator {
-    public Button yourButton;
+    public Button yourButton3;
 
     void Start () {
-        Button btn = yourButton.GetComponent<Button>();
+        Button btn = yourButton3.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
 
