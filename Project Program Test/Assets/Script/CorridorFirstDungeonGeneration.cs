@@ -42,6 +42,7 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
         {
             if (roomFloors.Contains(position)==false) //if no room is at the position it is a dead end.
             {
+              
                 var room = runRandomWalk(randomWalkParameters, position);
                 roomFloors.UnionWith(room);
             }

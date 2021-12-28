@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inherites to use randomwalk on rooms.
 {
     [SerializeField]
-    private int corridorLenghth = 14, mineCount = 5;
+    private int mineCorridorLenghth = 14, mineCount = 5;
     [SerializeField] //Base Parameters for generation.
     private int minRoomWidth = 4, minRoomHeight = 4;
     [SerializeField]
@@ -20,8 +20,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
 
     protected override void runProceduralGeneration()
     {
+       
         CreateRooms();
         GenerateMine();
+        
     }
 
     private void CreateRooms()
@@ -166,7 +168,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         }
         return floor;
     }
-      private void GenerateMine()
+      public void GenerateMine()
     {
         HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
         HashSet<Vector2Int> potentialRoomPos = new HashSet<Vector2Int>();
@@ -175,44 +177,66 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         tilemapVisualizer.paintFloorTiles(floorPositions);
     }
 
-    private void CreateMine(HashSet<Vector2Int> floorPositions, HashSet<Vector2Int> potentialRoomPos)
+    public void CreateMine(HashSet<Vector2Int> floorPositions, HashSet<Vector2Int> potentialRoomPos)
 
     {
-
-        Vector2Int currentPosition = new Vector2Int (Random.Range(0,dungeonWidth-1), Random.Range(0, dungeonHeight-1));
-        potentialRoomPos.Add(currentPosition);
+        
+        Vector2Int edgePosition = FindRandomEdge();
+        
+        potentialRoomPos.Add(edgePosition);
         for (int i = 0; i < mineCount; i++)
         {
-            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, mineCount);
-            currentPosition = corridor[corridor.Count - 1];
-            potentialRoomPos.Add(currentPosition);
+            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(edgePosition, mineCount);
+            edgePosition = corridor[corridor.Count - 1];
+            potentialRoomPos.Add(edgePosition);
             floorPositions.UnionWith(corridor);
         }
 
-        
-
-
-
-
-        //Instantiate(blop, new (dungeonWidth-1, Random.Range(0, dungeonHeight-1), 0),  Quaternion.identity);
-        //ProceduralGenerationAlgorithms.RandomWalkCorridor();
-
-
-        //List<Vector3Int> mineTiles = new List<Vector3Int>();
-
-
 
     }
-
-    private static HashSet<Vector2Int> FindEdgePositions(int dungeonWidth, int dungeonHeight)
+    public Vector2Int FindRandomEdge ()
     {
-       // var startEdge = startPos;
-        HashSet<Vector2Int> EdgePositions = new HashSet<Vector2Int>();
-        
-        
+        var whichSide = Random.Range(0, 3);
+        var x=0;
+        var y=0;
 
-        return null;
-    }
+        if (whichSide == 0)
+        {
+           x=1;
+           y= Random.Range(1,dungeonHeight);
+            //Vector2Int leftEdge = new Vector2Int (1, Random.Range(1,dungeonHeight));     
+        } 
+        else if (whichSide == 1)
+        {
+            x=dungeonWidth;
+            y=Random.Range(1,dungeonHeight);
+
+            //Vector2Int rightEdge = new Vector2Int (dungeonWidth, Random.Range(1,dungeonHeight));    
+        } 
+        else if (whichSide == 2)
+        {
+            x=Random.Range(1,dungeonWidth);
+            y=dungeonHeight;
+            //Vector2Int topEdge = new Vector2Int (Random.Range(1,dungeonWidth), dungeonHeight);
+        } 
+        else if (whichSide == 3)
+        {
+            x=Random.Range(1,dungeonWidth);
+            y=1;
+            //Vector2Int buttomEdge = new Vector2Int (Random.Range(1,dungeonWidth), 1);    
+        }
+       
+           // HashSet<Vector2Int> edges = new HashSet<Vector2Int>();
+            Vector2Int edgePosition = new Vector2Int(x,y);
+
+            return edgePosition;
+          
+
+    
+
+
+    
+    }    
 
 
 
