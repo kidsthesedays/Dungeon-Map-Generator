@@ -13,7 +13,7 @@ public class ExitGame : MonoBehaviour {
     void TaskOnClick()
     {
         Application.Quit();
-        Debug.Log ("You have clicked the button!");
+        Debug.Log ("Exit Game!");
         /*
          * RoomFirstGenerator().createRoom();
          *
