@@ -15,7 +15,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
     private int offset = 1; //offset based from the bounds of each room. how far should the rooms be away from each other as a minimum.
     [SerializeField]
     private bool randomWalkRooms = false; // use or not use the algorithm.
-    public GameObject blop;
 
 
     protected override void runProceduralGeneration()
