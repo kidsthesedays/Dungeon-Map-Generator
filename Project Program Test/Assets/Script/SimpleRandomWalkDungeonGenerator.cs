@@ -9,7 +9,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator //inher
 {
     
     [SerializeField]
-    protected SimpleRandomWalkData randomWalkParameters; //Uses The parameters from the saved parameters files.
+    public SimpleRandomWalkData randomWalkParameters; //Uses The parameters from the saved parameters files.
     
 
     
