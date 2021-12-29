@@ -180,14 +180,15 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
 
     {
         
-        Vector2Int edgePosition = FindRandomEdge();
-        
-        potentialRoomPos.Add(edgePosition);
+        Vector2Int currentPosition = FindRandomEdge();
+       
+
+        potentialRoomPos.Add(currentPosition);
         for (int i = 0; i < mineCount; i++)
         {
-            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(edgePosition, mineCount);
-            edgePosition = corridor[corridor.Count - 1];
-            potentialRoomPos.Add(edgePosition);
+            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, mineCount);
+            currentPosition = corridor[corridor.Count - 1];
+            potentialRoomPos.Add(currentPosition);
             floorPositions.UnionWith(corridor);
         }
 
@@ -195,6 +196,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
     }
     public Vector2Int FindRandomEdge ()
     {
+        var collision = true;
         var whichSide = Random.Range(0, 3);
         var x=0;
         var y=0;
@@ -203,7 +205,17 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         {
            x=1;
            y= Random.Range(1,dungeonHeight);
-            //Vector2Int leftEdge = new Vector2Int (1, Random.Range(1,dungeonHeight));     
+            //Vector2Int leftEdge = new Vector2Int (1, Random.Range(1,dungeonHeight));  
+            while(collision)
+            {
+
+                x += 1;
+                
+                if(x>40)
+                {
+                    collision=false;
+                }
+            }   
         } 
         else if (whichSide == 1)
         {
@@ -226,16 +238,16 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         }
        
            // HashSet<Vector2Int> edges = new HashSet<Vector2Int>();
-            Vector2Int edgePosition = new Vector2Int(x,y);
+            Vector2Int currentPosition = new Vector2Int(x,y);
 
-            return edgePosition;
-          
-
+            return currentPosition;
     
-
-
-    
+    }
+    public void FindTiles()
+    {
+        
     }    
+
 
 
 
