@@ -6,24 +6,26 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour
 {
-    private Grid grid;
-    
+    [SerializeField]
+    //private BoolVisualizer boolVisual;
+    private Grid<bool> grid;
+
     private void Start()
     {
-        grid = new Grid(4, 2,10f,new Vector3(20,0));
+        grid = new Grid<bool>(16, 9,10f, Vector3.zero);
+        
+        //boolVisual.SetGrid(grid);
     }
 
     private void Update()
     {
         if (Input.GetMouseButton(0))
         {
-            grid.SetValue(UtilsClass.GetMouseWorldPosition(),56);
+            Vector3 position = UtilsClass.GetMouseWorldPosition();
+            grid.SetValue(position,true);
         }
 
-        if (Input.GetMouseButton(1))
-        {
-            Debug.Log(grid.GetValue(UtilsClass.GetMouseWorldPosition()));
-        }
+        
     }
 }
 
