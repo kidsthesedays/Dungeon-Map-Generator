@@ -151,7 +151,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         return closest;
     }
 
-    private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList)
+    public HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList)
     {
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
         foreach (var room in roomsList) //iterate through each point in the rooms and add a tile.
@@ -180,7 +180,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
 
     {
         
-        Vector2Int currentPosition = FindRandomEdge();
+        Vector2Int currentPosition = FindRandomEdge(floorPositions);
        
 
         potentialRoomPos.Add(currentPosition);
@@ -194,27 +194,33 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
 
 
     }
-    public Vector2Int FindRandomEdge ()
+    public Vector2Int FindRandomEdge (HashSet<Vector2Int> floor)
     {
+        var connection = true;
         var collision = true;
+        connection = FindTiles(Dir2D.cardinalDirList, floor);
         var whichSide = Random.Range(0, 3);
         var x=0;
         var y=0;
-
+        Vector2Int test = new Vector2Int(0,0);
         if (whichSide == 0)
         {
+            
            x=1;
            y= Random.Range(1,dungeonHeight);
-            //Vector2Int leftEdge = new Vector2Int (1, Random.Range(1,dungeonHeight));  
-            while(collision)
+         
+            while(collision== true)
             {
 
                 x += 1;
+                test.Set(x, y);
+               
                 
-                if(x>40)
+                if(connection == true)
                 {
                     collision=false;
                 }
+                
             }   
         } 
         else if (whichSide == 1)
@@ -222,30 +228,44 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
             x=dungeonWidth;
             y=Random.Range(1,dungeonHeight);
 
-            //Vector2Int rightEdge = new Vector2Int (dungeonWidth, Random.Range(1,dungeonHeight));    
+          
         } 
         else if (whichSide == 2)
         {
             x=Random.Range(1,dungeonWidth);
             y=dungeonHeight;
-            //Vector2Int topEdge = new Vector2Int (Random.Range(1,dungeonWidth), dungeonHeight);
+            
         } 
         else if (whichSide == 3)
         {
             x=Random.Range(1,dungeonWidth);
             y=1;
-            //Vector2Int buttomEdge = new Vector2Int (Random.Range(1,dungeonWidth), 1);    
+                
         }
        
-           // HashSet<Vector2Int> edges = new HashSet<Vector2Int>();
+           
             Vector2Int currentPosition = new Vector2Int(x,y);
 
             return currentPosition;
     
     }
-    public void FindTiles()
-    {
+    public bool FindTiles(List<Vector2Int> dirList, HashSet<Vector2Int> floorPos)
+    {   
+        var hello = false;
         
+        foreach (var position  in floorPos)
+        {
+            foreach (var dir in dirList)
+            {   
+                var neighbourPos = position + dir;
+                if (floorPos.Contains(neighbourPos) == true)
+                    hello = true;
+            }
+            
+        }    
+            
+            return hello;
+            
     }    
 
 
